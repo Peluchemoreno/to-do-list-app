@@ -19,4 +19,13 @@ function newItem() {
     li.toggleClass('strike');
   });
 
+  let removeBtn = $('<button class="crossOutButton"></button>');
+  removeBtn.append(document.createTextNode('X'));
+  li.append(removeBtn);
+
+  removeBtn.on('click', function removeItem() {
+    li.addClass('delete');
+  });
+
+  $('#list').sortable();
 }
